@@ -27,9 +27,9 @@ public class UserPage {
 	private By HeaderEditDelete = By.xpath("//a[@id='list-group-item'])");
 	private By CheckAllButton = By.xpath("//a[@id='list-group-item'])");
 	private By DeleteAllButton = By.xpath("//a[@id='list-group-item'])");
-	private By DialogBoxButtonNo  = By.xpath("//a[@id='list-group-item'])");
-	private By DialogBoxButtonYes = By.xpath("//a[@id='list-group-item'])");
-	private By DialogBoxButtonClose = By.xpath("//a[@id='list-group-item'])");
+	private By DeleteDialogBoxButtonNo  = By.xpath("//a[@id='list-group-item'])");
+	private By DeleteDialogBoxButtonYes = By.xpath("//a[@id='list-group-item'])");
+	private By DeleteDialogBoxButtonClose = By.xpath("//a[@id='list-group-item'])");
 	private By UserRowCheckBox = By.xpath("//a[@id='list-group-item'])");
 	private By UserDeletedSuccessMsg = By.xpath("//a[@id='list-group-item'])");
 	private By RowDeleteIcon = By.xpath("//a[@id='list-group-item'])");
@@ -131,6 +131,10 @@ public class UserPage {
     
     public void SearchTextBoxClick() {
 		driver.findElement(SearchTextBox).click();
+		driver.findElement(SearchTextBox).sendKeys("Name");
+		driver.findElement(SearchTextBox).sendKeys();
+		driver.findElement(SearchTextBox).sendKeys("NameTwo");
+		
 	}
 	
     public void RowEditIconClick() {
@@ -163,5 +167,23 @@ public class UserPage {
     
     public void IDNumberRowClick() {
 		driver.findElement(IDNumberRow).click();
+	}
+    
+    
+    public void DeleteAllButtonClick() {
+ 		driver.findElement(DeleteAllButton).click();
+ 		
+ 		
+ 	}
+    public void DeleteDialogBoxButtonNo() {
+ 		driver.findElement(DeleteDialogBoxButtonNo).click();
+ 		
+ 		
+ 	}
+    public void DeleteDialogBoxButtonYes() {
+		driver.findElement(DeleteDialogBoxButtonYes).click();
+	}
+    public void DeleteDialogBoxButtonClose() {
+		driver.findElement(DeleteDialogBoxButtonClose).click();
 	}
 }
