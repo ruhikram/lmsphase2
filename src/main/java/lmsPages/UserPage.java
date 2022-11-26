@@ -89,19 +89,79 @@ public class UserPage {
     	driver.findElement(PreviousPageLink).click();
 	}
     
-    public void PrevPageClick() {
-    	driver.findElement(PreviousPageLink).click();
+    public void FirstPageClick() {
+    	driver.findElement(FirstPageLink).click();
 	}
     
-    public void PrevPageClick() {
-    	driver.findElement(PreviousPageLink).click();
+    public void LastPageClick() {
+    	driver.findElement(LastPageLink).click();
 	}
     
+    public void AddNewUserClick() {
+		driver.findElement(AddNewUserButton).click();
+	}
     
+    public void HeaderIDClick() {
+		driver.findElement(HeaderID).click();
+	}
+    
+    public void HeaderNameClick() {
+		driver.findElement(HeaderName).click();
+	}
 	
+    public void HeaderEmailAddClick() {
+		driver.findElement(HeaderEmailAddress).click();
+	}
+    
+    public void HeaderContactNumClick() {
+		driver.findElement(HeaderContactNumber).click();
+	}
+    
+    public void HeaderBatchClick() {
+		driver.findElement(HeaderBatch).click();
+	}
+    
+    public void HeaderSkillClick() {
+		driver.findElement(HeaderSkill).click();
+	}
 	
+    public void CheckAllButtonClick() {
+		driver.findElement(CheckAllButton).click();
+	}
+    
+    public void SearchTextBoxClick() {
+		driver.findElement(SearchTextBox).click();
+	}
 	
+    public void RowEditIconClick() {
+		driver.findElement(RowEditicon).click();
+	}
+    
+    public void RowDeleteIconClick() {
+		driver.findElement(RowDeleteIcon).click();
+	}
 	
-	
-	
+    public void UserDetailsSubmitButtonClick() {
+		driver.findElement(UserDetailsSubmitButton).click();
+	}
+    
+    public void UserDetailsCancelButtonClick() {
+		driver.findElement(UserDetailsCancelButton).click();
+	}
+    
+    public void ConfirmUserDeleteYesButtonClick() {
+		driver.findElement(ConfirmUserDeleteYesButton).click();
+	}
+    
+    public void ConfirmUserDeleteNoButtonClick() {
+		driver.findElement(ConfirmUserDeleteNoButton).click();
+	}
+    
+    public void ConfirmUserDeleteMessageCloseIconClick() {
+		driver.findElement(ConfirmUserDeleteMessageCloseIcon).click();
+	}
+    
+    public void IDNumberRowClick() {
+		driver.findElement(IDNumberRow).click();
+	}
 }
