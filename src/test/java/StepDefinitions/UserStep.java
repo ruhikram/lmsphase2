@@ -1,11 +1,14 @@
 package StepDefinitions;
 
+import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lmsPages.UserPage;
+
 
 public class UserStep {
-	
+	private  UserPage up=new UserPage(DriverFactory.getDriver());
 
 @Given("The User Successfully logins into home page")
 public void the_user_successfully_logins_into_home_page() {
