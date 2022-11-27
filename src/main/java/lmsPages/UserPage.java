@@ -8,8 +8,8 @@ public class UserPage {
 	private WebDriver driver;
 	
 	private By UserHeaderButton = By.xpath("//a[@id='list-group-item'])");
-	private By Manageaprogram = By.xpath("//a[@id='list-group-item']) ");
-	private By FooterTotalProgram = By.xpath("//a[@id='list-group-item']) ");
+	private By Manageaprogram = By.xpath("//a[@id='list-group']) ");
+	private By FooterTotalProgram = By.xpath("//a[@id='list-groupitem']) ");
 	private By PreviousPageLink= By.xpath("//a[@id='list-group-item'])");
 	private By NextPageLInk= By.xpath("//a[@id='list-group-item'])");
 	private By FirstPageLink = By.xpath("//a[@id='list-group-item'])");
@@ -186,4 +186,35 @@ public class UserPage {
     public void DeleteDialogBoxButtonClose() {
 		driver.findElement(DeleteDialogBoxButtonClose).click();
 	}
+    public void UserDetailsStateDropDownIcon() {
+ 		driver.findElement(UserDetailsStateDropDownIcon).click();
+ 		
+ 		
+ 	}
+    public void UserDetailsStateDropDownSelect() {
+ 		driver.findElement(UserDetailsStateDropDownSelect).click();
+ 		
+ 		
+ 	}
+    public void UserDetailsPhoneNo() {
+ 		driver.findElement(UserDetailsPhoneNo).sendKeys("MoreThenTenDigitNumber");
+ 		
+ 		
+ 	}
+    public void UserDetailsPostalCode() {
+ 		driver.findElement(UserDetailsPostalCode).sendKeys("fiveDigitNumber");
+ 		
+ 		
+ 	}
+    public void UserDetailsUGprogram() {
+ 		driver.findElement(UserDetailsUGprogram).click();
+ 		
+ 		
+ 	}
+    public void UserDetailsAddCoAptSuiteUnitButton() {
+ 		driver.findElement(UserDetailsAddCoAptSuiteUnitButton).click();
+ 		
+ 		
+ 	}
+    
 }

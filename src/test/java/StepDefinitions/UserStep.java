@@ -73,31 +73,40 @@ public void user_checks_the_functionality_of_id() {
 
 @Then("User checks the functionality of User Details Window")
 public void user_checks_the_functionality_of_user_details_window() {
+    up.AddNewUserClick();
+   
     
 }
 
 @Then("User checks the functionality of Cancel button")
 public void user_checks_the_functionality_of_cancel_button() {
-    
+	up.UserDetailsCancelButtonClick();
 }
 
 @Then("User checks the functionality of Sbmit button")
 public void user_checks_the_functionality_of_sbmit_button() {
-    
+    up.UserDetailsSubmitButtonClick();
 }
 
 @Then("User checks the functionality of  input feild in Label Text")
 public void user_checks_the_functionality_of_input_feild_in_label_text() {
-   
+   up.UserDetailsStateDropDownIcon();
+   up.UserDetailsStateDropDownSelect();
+   up.UserDetailsSubmitButtonClick();
+   up.UserDetailsPhoneNo();
+   up.UserDetailsPostalCode();
 }
 
 @Then("User checks the functionality of Drop down menu")
 public void user_checks_the_functionality_of_drop_down_menu() {
-   
+   up.UserDetailsStateDropDownIcon();
+   up.UserDetailsUGprogram();
+   up.UserDetailsAddCoAptSuiteUnitButton();
 }
 
 @Then("User checks the functionality of Submit button")
 public void user_checks_the_functionality_of_submit_button() {
+	up.UserDetailsSubmitButtonClick();
    
 
 }
