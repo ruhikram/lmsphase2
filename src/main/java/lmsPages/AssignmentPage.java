@@ -3,7 +3,7 @@ package lmsPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class AssignmentPage {
+public class AssignmentPage extends Basepage {
 	private WebDriver driver;
 	
 	private By AssignmentButton = By.xpath("//a[@id='list-groupitem']) ");
@@ -37,10 +37,10 @@ public class AssignmentPage {
     private By LeftDeleteButton = By.xpath("//a[@id='list-groupitem']) ");
     private By LeftDeleteYesButton = By.xpath("//a[@id='list-groupitem']) ");
     private By LeftDeleteRightButton = By.xpath("//a[@id='list-groupitem']) ");
-	
+	private By ErroMessage = By.xpath("//a[@id='list-groupitem']) ");
 	
 	public AssignmentPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	public void AssignmentButtonClick() {
@@ -79,6 +79,11 @@ public class AssignmentPage {
 	}
 	public void AddNewAssignmentButton() {
 		driver.findElement(AddNewAssignmentButton).click();
+		if (LMSUserType == UserType.Admin)
+		{
+			String error = "Staff only have access to add New Assignment";
+			String msg = driver.findElement(ErroMessage).getText();
+		}
 	}
 	public void AssignmentDetailsSaveButton() {
 		driver.findElement(AssignmentDetailsSaveButton).click();

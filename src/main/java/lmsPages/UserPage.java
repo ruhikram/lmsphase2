@@ -3,7 +3,7 @@ package lmsPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class UserPage {
+public class UserPage extends Basepage {
 	
 	private WebDriver driver;
 	
@@ -74,7 +74,7 @@ public class UserPage {
 	private By UserDetailsInputFeildLabel = By.xpath("//a[@id='list-group-item'])");
 	
 	public UserPage(WebDriver driver) {
-		this.driver = driver;
+		super(driver);
 	}
 	
 	public void UserTabClick() {
