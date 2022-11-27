@@ -1,4 +1,4 @@
-package Pages;
+package lmsPages;
 
 import org.openqa.selenium.WebDriver;
 

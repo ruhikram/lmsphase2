@@ -12,7 +12,7 @@ import io.cucumber.java.en.When;
 public class Logout {
 	private String title;
 	private WebDriver driver;
-	LogoutFn ObjLogout = new LogoutFn(driver);
+	lmsPages.LogoutFn ObjLogout = new lmsPages.LogoutFn(driver);
 
 @Given("Admin or User or Staff Logged on to LMS website")
 public void admin_or_user_or_staff_logged_on_to_lms_website() {
