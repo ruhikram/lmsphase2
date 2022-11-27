@@ -12,7 +12,7 @@ import Pages.attendancefn;
 public class attendance {
 	private String title;
 	private WebDriver driver;
-	attendancefn Objattendance = new attendancefn(driver);
+	lmsPages.attendancefn Objattendance = new lmsPages.attendancefn(driver);
 	
 
 

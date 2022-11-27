@@ -20,8 +20,7 @@
 Feature: Aoutomate user module
 
 
-	Background: Admin/User/staff successfully logged into LMS website
-	Given The User Successfully logins into home page
+	
 
 	  @tag1
 	  Scenario: Checking the functionality of User module
