@@ -26,23 +26,27 @@ public class AssignmentPage extends Basepage {
 	private By AssignmentDetailsAssignmentGrade = By.xpath("//a[@id='list-groupitem']) ");
 	private By AssignmentDetailsAssignmentDueDate = By.xpath("//a[@id='list-groupitem']) ");
 	private By AssignmentDetailsCancelButton = By.xpath("//a[@id='list-groupitem']) ");
-	List<WebElement> ManageButtons = driver.findElements(By.xpath("//a[@id='list-groupitem'])"));
+	private List<WebElement> ManageButtons = driver.findElements(By.xpath("//a[@id='list-groupitem'])"));
 	private By EditAssignmentButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By EditAssignmentName = By.xpath("//a[@id='list-groupitem']) ");
+	private By EditAssignmentDescription = By.xpath("//a[@id='list-groupitem']) ");
+	private By EditAssignmentDueDate = By.xpath("//a[@id='list-groupitem']) ");
+	private By EditAssignmentGrade = By.xpath("//a[@id='list-groupitem']) ");
 	private By SaveButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By Cancelbutton = By.xpath("//a[@id='list-groupitem']) ");
-	List<WebElement> EditButtons = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
+	private List<WebElement> EditButtons = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
 	private By AssighnmentName = By.xpath("//a[@id='list-groupitem']) ");
 	private By GoogleFormSubmitButton = By.xpath("//a[@id='list-groupitem']) ");
-	List<WebElement> DeleteButtons = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
-	List<WebElement> chkBoxes = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
+	private List<WebElement> DeleteButtons = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
+	private List<WebElement> chkBoxes = driver.findElements(By.xpath("//a[@id='list-groupitem']) "));
 	private By DeleteYesButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By DeleteNoButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By LeftDeleteButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By LeftDeleteYesButton = By.xpath("//a[@id='list-groupitem']) ");
-	private By LeftDeleteRightButton = By.xpath("//a[@id='list-groupitem']) ");
+	private By LeftDeleteNoButton = By.xpath("//a[@id='list-groupitem']) ");
 	private By ErrorSuccessMessage = By.xpath("//a[@id='list-groupitem']) ");
-
+    private By AssighnmentGradeButton = By.xpath("//a[@id='list-groupitem']) ");
+    
 	public AssignmentPage(WebDriver driver) {
 		super(driver);
 	}
@@ -50,7 +54,9 @@ public class AssignmentPage extends Basepage {
 	public void AssignmentButtonClick() {
 		driver.findElement(AssignmentButton).click();
 	}
-
+	public void AssighnmentGradeButtonClick() {
+		driver.findElement(AssighnmentGradeButton).click();
+	}
 	public void NextPageLink() {
 		driver.findElement(NextPageLink).click();
 	}
@@ -157,8 +163,21 @@ public class AssignmentPage extends Basepage {
 		driver.findElement(EditAssignmentButton).click();
 	}
 
+	public void EditAssignmentDescription () {
+		driver.findElement(EditAssignmentDescription ).click();
+		driver.findElement(EditAssignmentDescription ).sendKeys("EDescription");
+	}
+	public void EditAssignmentDueDate() {
+		driver.findElement(EditAssignmentDueDate).click();
+		driver.findElement(EditAssignmentDueDate).sendKeys("EDueDate");
+	}
+	public void EditAssignmentGrade() {
+		driver.findElement(EditAssignmentGrade).click();
+		driver.findElement(EditAssignmentGrade).sendKeys("EGrade");
+	}
 	public void EditAssignmentName() {
 		driver.findElement(EditAssignmentName).click();
+		driver.findElement(EditAssignmentName).sendKeys("EName");
 	}
 
 	public void SaveButton() {
@@ -223,8 +242,8 @@ public class AssignmentPage extends Basepage {
 		driver.findElement(LeftDeleteYesButton).click();
 	}
 
-	public void LeftDeleteRightButton() {
-		driver.findElement(LeftDeleteRightButton).click();
+	public void LeftDeleteNotButton() {
+		driver.findElement(LeftDeleteNoButton).click();
 	}
 
 	public void CheckBoxEvent()
