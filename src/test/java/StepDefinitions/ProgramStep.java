@@ -18,8 +18,7 @@ public class ProgramStep {
 
 	@When("User is on program page")
 	public void user_is_on_program_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    hp.clickProgram();
 	}
 
 
@@ -52,8 +51,9 @@ boolean targetpage=prp.isManageProgramExists();
 	}
 
 	@Then("User checks Search box Functionality")
-	public void user_checks_search_box_functionality() {
-	    prp.search();
+	public void user_checks_search_box_functionality(String program) {
+	    
+		prp.isBatchExist(program);
 	}
 
 	@Then("User checks Ascending order Functionality")

@@ -1,9 +1,10 @@
 package lmsPages;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProgramPage extends BasePage {
+	private static final Duration TIME_TO_WAIT = null;
+
 	public ProgramPage(WebDriver driver) {
 		super(driver);
 	}
@@ -27,10 +30,10 @@ public class ProgramPage extends BasePage {
 	@FindBy(xpath = "//input[@id='search']")
 	WebElement txtsearch;
 	// ascending arrow
-	@FindBy(xpath = "//*[@id='asc']")
-	WebElement ascending;
-	@FindBy(xpath = "//*[@id='des']")
-	WebElement descending;
+	//sort symbol
+			@FindBy(xpath = "//*[@id='sort']")
+			WebElement sort;
+			
 	@FindBy(xpath = "//*[@id='addnew']")
 	WebElement addnew;
 	@FindBy(xpath = "//*[@id='name']")
@@ -69,7 +72,12 @@ public class ProgramPage extends BasePage {
 	WebElement msgConfirmation4;
 	@FindBy(xpath = "//input[name=\"cb-element mr-10")
 	List<WebElement> checkboxes;
-
+	@FindBy(xpath="//nav[@class='_1ypTlJ']/a")
+	List<WebElement> elements;
+	@FindBy(xpath="//[@id='MainCol']/div[2]/div[1]")
+	WebElement title;
+	@FindBy(xpath="//*[@id='batches']/div[3]//img")
+	List<WebElement> Programnames;
 	// Actions
 	public boolean isManageProgramExists() // Manage Program Page heading display status
 	{
@@ -93,34 +101,38 @@ public class ProgramPage extends BasePage {
 
 	public void pagination() {
 
-		List<WebElement> elements = driver.findElements(By.tagName("a"));
-		for (int i = 0; i < elements.size(); i++) {
-			String title = elements.get(i).getAttribute("title");
-			if (title.equals("Next Page")) {
-				elements.get(i).click();
-				break;
+		new WebDriverWait(
+	            driver, TIME_TO_WAIT).until(
+	                    ExpectedConditions.presenceOfElementLocated(
+	                            By.tagName("a")));
+	
+	for (int i = 0;i<elements.size(); i++) {
+	    
+	    if (title.equals("Showing 1 t0 5 of 21 entrries")) {
+	        elements.get(i).click();
+	        break;
+	    }
+	}
+	
+	}
+
+	public boolean isBatchExist(String BName)
+	{
+		boolean flag=false;
+		for(WebElement ele:Programnames)
+		{				
+			if(ele.getAttribute("title").equals(BName))
+			{
+			flag=true;
+			break;
 			}
 		}
+		
+		return flag;
+	
 	}
-
-	public void search() {
-		Actions act = new Actions(driver);
-		txtsearch.sendKeys("Data science");
-		act.sendKeys(Keys.ENTER);
-
-		txtsearch.sendKeys("ygjhhio");
-		act.sendKeys(Keys.ENTER);
-
-		txtsearch.sendKeys("inactive");
-		act.sendKeys(Keys.ENTER);
-
-		txtsearch.sendKeys("active");
-		act.sendKeys(Keys.ENTER);
-
-	}
-
 	public void ascending() {
-		ascending.click();
+		sort.click();
 		boolean flag = false;
 		List<WebElement> list = driver.findElements(By.xpath(".//*[@id='paymentFormsTable']//tbody//tr"));
 		int size = list.size();
@@ -146,7 +158,9 @@ public class ProgramPage extends BasePage {
 	}
 
 	public void descending() {
-		descending.click();
+		Actions actions = new Actions(driver);
+		actions.doubleClick(sort).perform();
+		
 		boolean flag = false;
 		List<WebElement> list = driver.findElements(By.xpath(".//*[@id='paymentFormsTable']//tbody//tr"));
 		int size = list.size();
