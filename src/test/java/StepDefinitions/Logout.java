@@ -5,34 +5,30 @@ import org.testng.Assert;
 
 import Pages.LogoutFn;
 import Pages.attendancefn;
+import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lmsPages.Basepage;
 
-public class Logout {
-	private String title;
+public class Logout extends Basepage {
+
 	private WebDriver driver;
-	lmsPages.LogoutFn ObjLogout = new lmsPages.LogoutFn(driver);
+	
+	public Logout(WebDriver driver) {
+		super(driver);
+	}
+	
+	lmsPages.LogoutPage ObjLogout = new lmsPages.LogoutPage(driver);
 
-@Given("Admin or User or Staff Logged on to LMS website")
-public void admin_or_user_or_staff_logged_on_to_lms_website() {
-    // Write code here that turns the phrase above into concrete actions
-	//it calls Application hooks to invoke browser
+	@Given("Admin or User or Staff Logged on to LMS website")
+	public void admin_or_user_or_staff_logged_on_to_lms_website() {
+		DriverFactory.getDriver().get("https://NumpyNinja/lms/");
+	}
 
- }
-
-@When("Admin or User or Staff Clicks on LogOut button")
-public void admin_or_user_or_staff_clicks_on_log_out_button() {
-    // Write code here that turns the phrase above into concrete actions
-	ObjLogout.ClickLogOutButton();
- }
-
-@Then("Admin or User or Staff should be navigated to Login Screen")
-public void admin_or_user_or_staff_should_be_navigated_to_login_screen() {
-    // Write code here that turns the phrase above into concrete actions
-	title = driver.getTitle();
-	Assert.assertTrue(title.contains("expectedTitleName"));
- }
-
+	@When("Admin or User or Staff Clicks on LogOut button")
+	public void admin_or_user_or_staff_clicks_on_log_out_button() {
+		ObjLogout.ClickLogOutButton();
+	}
 
 }

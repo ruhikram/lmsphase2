@@ -8,7 +8,7 @@ import lmsPages.AssignmentPage;
 
 
 public class AssignmentStep {
-	private  AssignmentPage Ap=new AssignmentPage(DriverFactory.getDriver());
+	private  AssignmentPage Ap = new AssignmentPage(DriverFactory.getDriver());
 
 	
 @Given("The User Successfully logins into home page")
@@ -19,7 +19,7 @@ public class AssignmentStep {
 @Given("The user clicks on Assignment")
 public void the_user_clicks_on_assignment() {
 	
-    
+    Ap.AddNewAssignmentButton();
 }
 
 @When("User tests the functionality of Assignment module")

@@ -23,6 +23,6 @@ Feature: LogOut button
   Scenario: Validating  LogOut button 
     Given Admin or User or Staff Logged on to LMS website
     When Admin or User or Staff Clicks on LogOut button
-    Then Admin or User or Staff should be navigated to Login Screen
+    
 
     
