@@ -4,13 +4,15 @@ import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import lmsPages.BatchPage;
 import lmsPages.HomePage;
+import lmsPages.Loginpage;
 
 public class BatchStep {
 	private  BatchPage Bp=new BatchPage(DriverFactory.getDriver());
 	private  HomePage hp=new HomePage(DriverFactory.getDriver());
+	private  Loginpage Lp=new Loginpage(DriverFactory.getDriver());
 	@Given("User logged on to LMS website")
 	public void user_logged_on_to_lms_website() {
-	    
+	    Lp.validLogin();
 	}
 
 	@When("User navigates program page")

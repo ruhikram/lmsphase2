@@ -6,14 +6,16 @@ import factory.DriverFactory;
 import io.cucumber.java.en.*;
 import lmsPages.Attendancepage;
 import lmsPages.HomePage;
+import lmsPages.Loginpage;
 import lmsPages.ProgramPage;
 
 public class AttendanceStep {
 	private  Attendancepage Ap=new Attendancepage(DriverFactory.getDriver()); 
 	private  HomePage hp=new HomePage(DriverFactory.getDriver());
+	private  Loginpage Lp=new Loginpage(DriverFactory.getDriver());
 	@Given("User logged on to the LMS page")
 	public void user_logged_on_to_the_lms_page() {
-	   
+	   Lp.validLogin();
 	}
 
 	@When("User is on Attendance page")
