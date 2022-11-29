@@ -1,4 +1,8 @@
 # lmsphase2
 
 
-test
+SELENIUM   SQUAD    
+TEAM 15
+AMUDHA  	 			
+RUHI        		
+MALATHI
