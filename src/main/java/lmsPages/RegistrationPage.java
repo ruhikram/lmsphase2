@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import factory.DriverFactory;
 
-public class RegistrationPage extends Basepage {
+public class RegistrationPage extends BasePage {
 
 	   WebDriver driver;
 	   

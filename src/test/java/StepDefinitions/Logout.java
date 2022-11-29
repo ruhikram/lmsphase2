@@ -1,17 +1,12 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
-import Pages.LogoutFn;
-import Pages.attendancefn;
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lmsPages.Basepage;
+import lmsPages.BasePage;
 
-public class Logout extends Basepage {
+public class Logout extends BasePage {
 
 	private WebDriver driver;
 	

@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class AssignmentPage extends Basepage {
+public class AssignmentPage extends BasePage {
 	private WebDriver driver;
 
 	private By AssignmentButton = By.xpath("//a[@id='list-groupitem']) ");

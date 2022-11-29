@@ -3,7 +3,7 @@ package lmsPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class UserPage extends Basepage {
+public class UserPage extends BasePage {
 	
 	private WebDriver driver;
 	
