@@ -1,44 +1,5 @@
 package lmsPages;
 
-<<<<<<< HEAD
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
-import factory.DriverFactory;
-
-public class Loginpage extends Basepage {
-	
-	public Loginpage(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
-
-	private WebDriver driver;
-	
-	//private By UserHeaderButton = By.xpath("//button//span[text()='Dismiss']");
-	private By LoginButton = By.id("//button//span[text()='Dismiss']");
-	private By Username = By.id("//button//span[text()='Dismiss']");
-	private By Password = By.id("//button//span[text()='Dismiss']");
-	private By code = By.id("//button//span[text()='Dismiss']");
-
-
-	public void LoginButtonClick() {
-		driver.findElement(LoginButton).click();
-	}
-		
-	public void UsernameClick() {
-		driver.findElement(Username).click();
-		
-		
-	}
-	public void PasswordClick() {
-		driver.findElement(Password).click();
-	}
-				
-	public void CodeClick() {
-		driver.findElement(code).click();
-	}
-=======
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,7 +9,7 @@ public class Loginpage extends BasePage {
 	public Loginpage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 
 	//Elements
 	//loginlink
@@ -85,13 +46,13 @@ public class Loginpage extends BasePage {
 	WebElement errormsg2;
 	@FindBy(xpath = "//h4[normalize-space()='password should contain one uppercase letter']")
 	WebElement errormsg3;
-	
 
 
 
-	
-	
-	
+
+
+
+
 	//Actions
 	public void openurl()
 	{
@@ -117,7 +78,7 @@ public class Loginpage extends BasePage {
 			return (false);
 		}
 	}
-	
+
 	public void setEmail(String email) {
 		txtuser.sendKeys(email);
 	}
@@ -134,7 +95,7 @@ public class Loginpage extends BasePage {
 		setEmail("John");
 		setPassword("password");
 		clickLogin();
-		
+
 	}
 	public void invalidLogin()
 	{
@@ -145,7 +106,7 @@ public class Loginpage extends BasePage {
 	public void clickforgotPassword()
 	{
 		lnkforgotPassword.click();
-		
+
 	}
 	public void setNewpassword(String newpassword) {
 		txtnewPassword.sendKeys(newpassword);
@@ -156,15 +117,15 @@ public class Loginpage extends BasePage {
 	public void clicksubmit()
 	{
 		btnsubmit.click();
-		
+
 	}
-	
+
 	public void validpasswordreset()
 	{
 		setNewpassword("Password2$");
 		setNewpassword1("Password2$");
 		clicksubmit();
-		
+
 	}
 	public String errorMsg() {
 		try {
@@ -205,7 +166,7 @@ public class Loginpage extends BasePage {
 		setNewpassword1("passwordd");
 		clicksubmit();
 		errorMsg();
-		
+
 	}
 	public void invalidpasswordreset1()
 	{
@@ -213,7 +174,7 @@ public class Loginpage extends BasePage {
 		setNewpassword1("pass");
 		clicksubmit();
 		errorMsg1();
-		
+
 	}
 	public void invalidpasswordreset2()
 	{
@@ -221,7 +182,7 @@ public class Loginpage extends BasePage {
 		setNewpassword1("passwordd");
 		clicksubmit();
 		errorMsg2();
-		
+
 	}
 	public void invalidpasswordreset3()
 	{
@@ -229,11 +190,10 @@ public class Loginpage extends BasePage {
 		setNewpassword1("passwordE");
 		clicksubmit();
 		errorMsg3();
-		
+
 	}
-	
-	
->>>>>>> branch 'main' of https://github.com/ruhikram/lmsphase2.git
-	
-	
+
+
+
+
 }
