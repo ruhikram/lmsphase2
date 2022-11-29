@@ -6,11 +6,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import lmsPages.BasePage;
 
-public class Logout extends BasePage {
+public class LogoutStep extends BasePage {
 
 	private WebDriver driver;
 	
-	public Logout(WebDriver driver) {
+	public LogoutStep(WebDriver driver) {
 		super(driver);
 	}
 	
