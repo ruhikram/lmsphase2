@@ -1,8 +1,12 @@
 package lmsPages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import factory.DriverFactory;
 
 public class RegistrationPage extends Basepage {
 
@@ -167,6 +171,7 @@ public class RegistrationPage extends Basepage {
 	    public void navigateRegistrationPage()
 	    {
 	    	driver.navigate().back();
+	    	DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	    }
 	    
 	    

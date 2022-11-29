@@ -1,5 +1,9 @@
 package StepDefinitions;
 
+import java.time.Duration;
+
+
+
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,7 +16,9 @@ public class RegistrationStep {
 	@Given("Admin\\/User\\/Staff Logged on to LMS website")
 	public void admin_user_staff_logged_on_to_lms_website() {
 		DriverFactory.getDriver().get("https://NumpyNinja/lms/");
-		throw new io.cucumber.java.PendingException();
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//throw new io.cucumber.java.PendingException();
+		
 	}
 
 	@When("Admin\\/User\\/Staff lands on Registration page")

@@ -1,5 +1,7 @@
 package StepDefinitions;
 
+import java.time.Duration;
+
 import factory.DriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,6 +16,7 @@ public class AssignmentStep {
 @Given("The User Successfully logins into home page")
 	public void the_user_successfully_logins_into_home_page() {
 		DriverFactory.getDriver().get("https://NumpyNinja/lms/");
+		DriverFactory.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 }
 
 @Given("The user clicks on Assignment")
